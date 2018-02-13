@@ -1,19 +1,50 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import fighters from "./fighters.json";
+import FightCard from "./components/FightCard";
+import Wrapper from "./components/Wrapper/Wrapper";
+import Counter from "./components/Counter/Counter.js";
+import Title from "./components/Title/Title.js";
 
 class App extends Component {
+
+  state = {
+    fighters, count: 0
+  };
+
+
+  // handleIncrement increments this.state.count by 1
+  handleIncrement = () => {
+    // We always use the setState method to update a component's state
+    this.setState({ count: this.state.count + 1 });
+  };
+
+  handleClick = id => {
+    console.log("Image Clicked")
+    fighters.sort(function (a, b) { return 0.5 - Math.random() });
+    // Set this.state.friends equal to the new friends array
+    this.handleIncrement();
+    this.setState({ fighters });
+  };
+
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+        <Title />
+        <Counter count={this.state.count}/>
+        <div className="container">
+          <Wrapper>
+            {this.state.fighters.map(fighter => (
+              <FightCard
+                id={fighter.id}
+                key={fighter.id}
+                name={fighter.name}
+                image={fighter.image}
+                handleClick={this.handleClick}
+              />
+            ))}
+          </Wrapper>
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-        <p> These are not the droids you are looking for </p>
       </div>
     );
   }
