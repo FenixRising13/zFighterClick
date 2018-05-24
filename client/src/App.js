@@ -3,8 +3,8 @@ import './App.css';
 import fighters from "./fighters.json";
 import FightCard from "./components/FightCard";
 import Wrapper from "./components/Wrapper";
-import Counter from "./components/Counter.js";
-import Title from "./components/Title.js";
+import Counter from "./components/Counter";
+import Title from "./components/Title";
 
 class App extends Component {
 
