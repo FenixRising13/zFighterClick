@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import './App.css';
 import fighters from "./fighters.json";
 import FightCard from "./components/FightCard";
-import Wrapper from "./components/Wrapper/Wrapper";
-import Counter from "./components/Counter/Counter.js";
-import Title from "./components/Title/Title.js";
+import Wrapper from "./components/Wrapper";
+import Counter from "./components/Counter.js";
+import Title from "./components/Title.js";
 
 class App extends Component {
 
@@ -12,6 +12,13 @@ class App extends Component {
     fighters, count: 0
   };
 
+  // Array for fighters clicked
+  clicked = []
+
+  // Function to push clicked fighters to a new array
+  storeClicked = () => {
+
+  }
 
   // handleIncrement increments this.state.count by 1
   handleIncrement = () => {
