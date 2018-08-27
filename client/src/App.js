@@ -6,6 +6,8 @@ import Wrapper from "./components/Wrapper";
 import Counter from "./components/Counter";
 import Title from "./components/Title";
 
+// console.log(`fighters`,fighters);
+
 class App extends Component {
 
   state = {
@@ -13,12 +15,13 @@ class App extends Component {
   };
 
   // Array for fighters clicked
-  clicked = []
+  // clicked = []
 
   // Function to push clicked fighters to a new array
-  storeClicked = () => {
+  // storeClicked = () => {
 
-  }
+  // }
+//
 
   // handleIncrement increments this.state.count by 1
   handleIncrement = () => {
@@ -27,7 +30,7 @@ class App extends Component {
   };
 
   handleClick = id => {
-    console.log("Image Clicked")
+    // console.log(`Image Clicked`,props.fighter)
     fighters.sort(function (a, b) { return 0.5 - Math.random() });
     // Set this.state.friends equal to the new friends array
     this.handleIncrement();
